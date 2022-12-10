@@ -1,0 +1,115 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- Reference Google fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Oswald:400,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+  <!-- Reference Bootstrap and local files -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" th:href="@{css/slick.css}">
+  <link rel="stylesheet" th:href="@{css/slick-theme.css}">
+  <link rel="stylesheet" th:href="@{css/home.css}">
+  <link rel="icon" th:href="@{images/header/white-logo.png}">
+
+  <title>Hotel Reservation</title>
+</head>
+
+<body>
+
+<div class="main-overlay js-main-overlay"></div>
+
+<!-- Main Cover Section -->
+<section class="cover-main" id="home">
+  <header>
+    <nav class="nav-wrapper">
+      <div class="logo">
+        <a href="#"> <img src="images/header/white-logo.png" class="logo">
+        </a>
+      </div>
+
+      <!-- Menu bar -->
+    </nav>
+    <div class="menu-trigger js-menu-trigger"></div>
+  </header>
+
+  <!-- Main buttons and title -->
+  <div class="wrapper">
+    <ul id="scene" >
+      <li class="layer name" >Miymanxana</li>
+      <li class="layer title" >Basqariw sistemasi</li>
+      <li class="layer btn btn-main">
+        <a th:href="@{/rooms}" class="reservation-btn">Xanalar</a>
+        <a th:href="@{/foods}" class="reservations-btn">Awqatlar</a>
+        <br><br>
+        <a th:href="@{/fitness}" class="reservation-btn">Fitnes Zali</a>
+      </li>
+    </ul>
+  </div>
+</section>
+
+
+
+<!-- Footer -->
+<footer id="footer" class="main-footer">
+
+  <div class="container-body">
+
+
+    <!-- Footer Column two (social links) -->
+    <div class="colum2">
+      <h1>Social Tarmaqlar</h1>
+
+      <div class="row">
+        <a href="#instagram" target="_blank">
+          <img src="https://freepngimg.com/thumb/instagram/118541-logo-instagram-png-download-free.png" /></a>
+        <p>Instagram</p>
+      </div>
+
+
+      <div class="row">
+        <a href="#facebook" target="_blank"><img
+                src="/images/footer/facebook.png" /></a>
+        <p>Facebook</p>
+      </div>
+    </div>
+
+    <!-- Footer Column three (contact info) -->
+    <div class="colum3">
+      <h1>Contact</h1>
+
+      <div class="row2">
+        <a target="_blank"
+           href="https://www.google.com/maps/place/%D0%9D%D1%83%D0%BA%D1%83%D1%81/data=!4m2!3m1!1s0x41dd9a36ea33d7cf:0x8454c68babd0b936?sa=X&ved=2ahUKEwixz-Tm-Oz7AhUPqIsKHbbYAkoQ8gF6BAgIEAE"><img
+                src="images/footer/location.png" /></a>
+        <p>Qaraqalpaqstan, Nukus</p>
+      </div>
+
+
+      <div class="row2">
+        <a href="#whatsapp" target="_blank"><img src="/images/footer/whatsApp.png"
+                                                                  class="whats-img" /></a>
+        <p>WhatsApp</p>
+      </div>
+    </div>
+  </div>
+
+
+</footer>
+
+<!-- Reference Javascript and local files -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js"></script>
+
+<script th:src="@{scripts/parallax.min.js}"></script>
+<script th:src="@{scripts/slick.min.js}"></script>
+<script th:src="@{scripts/home.js}"></script>
+
+</body>
+
+</html>

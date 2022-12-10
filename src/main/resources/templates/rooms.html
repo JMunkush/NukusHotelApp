@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xanalar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/roomStyle.css">
+    <style>
+        .bn632-hover {
+            width: 160px;
+            font-size: 16px;
+            font-weight: 600;
+            color: #fff;
+            cursor: pointer;
+            margin: 20px;
+            height: 55px;
+            text-align:center;
+            border: none;
+            background-size: 300% 100%;
+            border-radius: 50px;
+            moz-transition: all .4s ease-in-out;
+            -o-transition: all .4s ease-in-out;
+            -webkit-transition: all .4s ease-in-out;
+            transition: all .4s ease-in-out;
+        }
+
+        .bn632-hover:hover {
+            background-position: 100% 0;
+            moz-transition: all .4s ease-in-out;
+            -o-transition: all .4s ease-in-out;
+            -webkit-transition: all .4s ease-in-out;
+            transition: all .4s ease-in-out;
+        }
+
+        .bn632-hover:focus {
+            outline: none;
+        }
+
+        .bn632-hover.bn28 {
+            background-image: linear-gradient(
+                    to right,
+                    #eb3941,
+                    #f15e64,
+                    #e14e53,
+                    #e2373f
+            );
+            box-shadow: 0 5px 15px rgba(242, 97, 103, 0.4);
+        }
+        .bn62 {
+            color: #1cc49d;
+            background-color: #1b2f31;
+            border-radius: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 3em;
+            width: 8em;
+            font-size: large;
+            font-weight: 600;
+        }
+    button {
+        width: 150px;
+        height: 50px;
+        cursor: pointer;
+        font-size: 20px;
+        font-weight: bold;
+        color: black;
+        background: white;
+        border: 2px solid black;
+        box-shadow: 5px 5px 0 black,
+        -5px -5px 0 black,
+        -5px 5px 0 black,
+        5px -5px 0 black;
+        transition: 500ms ease-in-out;
+    }
+
+    button:hover {
+        box-shadow: 20px 5px 0 black, -20px -5px 0 black;
+    }
+
+    button:focus {
+        outline: none;
+    }</style>
+</head>
+
+<body>
+<p style="background-image: url('img_girl.jpg');">
+    <!-- ROOMS LIST -->
+    <section id="rooms-list" class="rooms-list">
+        <div class="container container-medium">
+            <div class="row row-2">
+                <h2>Xanalar</h2>
+            </div>
+            <br>
+            <a href="/" class="bn62">
+                Arqaǵa
+            </a>
+            <br>
+            <div class="row">
+                <div class="col-2">
+                    <div class="room-image">
+                        <img src="/images/room-1.jpg" alt="room">
+                    </div>
+                    <div class="room-info">
+                        <div>
+                            <h4>Delyuks Qara Bólme</h4>
+                            <p>Eki adamlıq hám bir adamlıq karavotli keń lyuks bólme. Hár qanday ushın ideal... </p>
+                            <p class="price"><span>1 500 000 swm</span> / keshesi</p>
+                            <form th:action="@{/roomAct}" th:method="get">
+                                <input type="hidden" name="roomId" value="1">
+                                <button th:if="${room1.isActive()}" class="name noselect" type="submit">Bántlew</button>
+                                <h3 th:if="${!room1.isActive()}" style="color: red">Xana Bánt</h3>
+                            </form>
+                            <br>
+                            <form th:action="@{/roomActBreak}" th:method="get">
+                                <input type="hidden" name="roomId" value="1">
+                               <button th:if="${!room1.isActive()}" class="bn632-hover bn28" type="submit">Biykar Etiw</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="room-image">
+                        <img src="/images/room-2.jpg" alt="room">
+                    </div>
+                    <div class="room-info">
+                        <div>
+                            <h4>Studio Broadway Xanasi</h4>
+                            <p>Eki adamlıq hám bir adamlıq karavotli keń lyuks bólme. Hár qanday ushın ideal... </p>
+                            <p class="price"><span>1 500 000 swm</span> / keshesi</p>
+                            <form th:action="@{/roomAct}" th:method="get">
+                                <input type="hidden" name="roomId" value="2">
+                                <button th:if="${room2.isActive()}" class="name noselect" type="submit">Bántlew</button>
+                                <h3 th:if="${!room2.isActive()}" style="color: red">Xana Bánt</h3>
+                            </form>
+                            <br>
+                            <form th:action="@{/roomActBreak}" th:method="get">
+                                <input type="hidden" name="roomId" value="2">
+                                <button th:if="${!room2.isActive()}" class="bn632-hover bn28" type="submit">Biykar Etiw</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-2">
+                    <div class="room-image">
+                        <img src="/images/room-3.jpg" alt="room">
+                    </div>
+                    <div class="room-info">
+                        <div>
+                            <h4>Standart Bır Adamlıq Xana</h4>
+                            <p>Eki adamlıq hám bir adamlıq karavotli keń lyuks bólme. Hár qanday ushın ideal... </p>
+                            <p class="price"><span>1 500 000 swm</span> / keshesi</p>
+                            <form th:action="@{/roomAct}" th:method="get">
+                                <input type="hidden" name="roomId" value="3">
+                                <button th:if="${room3.isActive()}" class="name noselect" type="submit">Bántlew</button>
+                                <h3 th:if="${!room3.isActive()}" style="color: red">Xana Bánt</h3>
+                            </form>
+                            <br>
+                            <form th:action="@{/roomActBreak}" th:method="get">
+                                <input type="hidden" name="roomId" value="3">
+                                <button th:if="${!room3.isActive()}" class="bn632-hover bn28" type="submit">Biykar Etiw</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="room-image">
+                        <img src="/images/room-4.jpg" alt="room">
+                    </div>
+                    <div class="room-info">
+                        <div>
+                            <h4>Studio Kishi Bólme</h4>
+                            <p>Eki adamlıq hám bir adamlıq karavotli keń lyuks bólme. Hár qanday ushın ideal... </p>
+                            <p class="price"><span>1 500 000 swm</span> / keshesi</p>
+                            <form th:action="@{/roomAct}" th:method="get">
+                                <input type="hidden" name="roomId" value="4">
+                                <button th:if="${room4.isActive()}" class="name noselect" type="submit">Bántlew</button>
+                                <h3 th:if="${!room4.isActive()}" style="color: red">Xana Bánt</h3>
+                            </form>
+                            <br>
+                            <form th:action="@{/roomActBreak}" th:method="get">
+                                <input type="hidden" name="roomId" value="4">
+                                <button th:if="${!room4.isActive()}" class="bn632-hover bn28" type="submit">Biykar Etiw</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-2">
+                    <div class="room-image">
+                        <img src="/images/room-5.jpg" alt="room">
+                    </div>
+                    <div class="room-info">
+                        <div>
+                            <h4>Studio Korparativ Bólme</h4>
+                            <p>Eki adamlıq hám bir adamlıq karavotli keń lyuks bólme. Hár qanday ushın ideal... </p>
+                            <p class="price"><span>1 500 000 swm</span> / keshesi</p>
+                            <form th:action="@{/roomAct}" th:method="get">
+                                <input type="hidden" name="roomId" value="5">
+                                <button th:if="${room5.isActive()}" class="name noselect" type="submit">Bántlew</button>
+                                <h3 th:if="${!room5.isActive()}" style="color: red">Xana Bánt</h3>
+                            </form>
+                            <br>
+                            <form th:action="@{/roomActBreak}" th:method="get">
+                                <input type="hidden" name="roomId" value="5">
+                                <button th:if="${!room5.isActive()}" class="bn632-hover bn28" type="submit">Biykar Etiw</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="room-image">
+                        <img src="/images/room-6.jpg" alt="room">
+                    </div>
+                    <div class="room-info">
+                        <div>
+                            <h4>Deluxe Egiz Bólme</h4>
+                            <p>Eki adamlıq hám bir adamlıq karavotli keń lyuks bólme. Hár qanday ushın ideal... </p>
+                            <p class="price"><span>1 500 000 swm</span> / keshesi</p>
+                            <form th:action="@{/roomAct}" th:method="get">
+                                <input type="hidden" name="roomId" value="6">
+                                <button th:if="${room6.isActive()}" class="name noselect" type="submit">Bántlew</button>
+                                <h3 th:if="${!room6.isActive()}" style="color: red">Xana Bánt</h3>
+                            </form>
+                            <br>
+                            <form th:action="@{/roomActBreak}" th:method="get">
+                                <input type="hidden" name="roomId" value="6">
+                                <button th:if="${!room6.isActive()}" class="bn632-hover bn28" type="submit">Biykar Etiw</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER SECTION -->
+    <footer>
+        <div class="container">
+            <div class="back-to-top">
+                <a href="#rooms-list"><i class="fas fa-chevron-up"></i></a>
+            </div>
+            <div class="footer__content row">
+                <div class="col-3">
+                    <h4>Biz</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam unde accusantium sit repudiandae
+                        incidunt quod eius recusandae blanditiis voluptates consectetur?</p>
+                </div>
+                <div class="col-3">
+                    <h4>Tólew Usıllari</h4>
+                    <p>Siz tańlaǵan hár qanday usılda tóleń, biz barlıq tólew variantların qollap -quwatlaymız</p>
+                    <ul class="payment-methods">
+                        <li>
+                            <a href="#">
+                                <i class="fab fa-paypal"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fab fa-cc-visa"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fab fa-cc-mastercard"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fab fa-apple-pay"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-3">
+                    <h4>Social Tarmaq</h4>
+                    <p>Bizni social tarmaqlarda gúzetip barıń hám mıymanxana menen baylanısda bolıń.</p>
+                    <ul class="social-icons">
+                        <li>
+                            <a href="#">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fab fa-tripadvisor"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
